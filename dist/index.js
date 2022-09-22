@@ -7834,7 +7834,7 @@ const main = async () => {
 
         const duration = new Date() - timeStart;
         const commitHash = updateRes.data?.last_update?.identifier;
-        const commitMessage = updateRes.data?.last_update?.identifier;
+        const commitMessage = updateRes.data?.last_update?.message;
         const commitAuthor = updateRes.data?.last_update?.author;
         const commitDate = updateRes.data?.last_update?.date;
 
