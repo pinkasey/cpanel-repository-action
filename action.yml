@@ -17,6 +17,9 @@ inputs:
   repository_root:
     description: "folder in which the repository is installed in the target cPanel account. must already exist. e.g: /home/your_account/repositories/your_repository"
     required: true
+  branch:
+    description: "branch to checkout and update. e.g 'main'. Be careful when setting this parameter - it may change the checked-out branch in cPanel"
+    required: true
 outputs:
   duration:
     description: 'Duration of deployment, in milliseconds'
