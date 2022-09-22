@@ -7844,6 +7844,7 @@ const main = async () => {
         core.setOutput("commitAuthor", commitAuthor);
         core.setOutput("commitDate", commitDate);
         core.info(`deployment duration: ${duration}`);
+        core.info(`commit-message of updated repository: ${commitMessage}`);
     } catch (error) {
         const duration = new Date() - timeStart;
         const errorBody = error.response?.data;
