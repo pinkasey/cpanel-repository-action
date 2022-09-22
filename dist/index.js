@@ -7833,10 +7833,10 @@ const main = async () => {
         }
 
         const duration = new Date() - timeStart;
-        const commitHash = updateRes.last_update?.identifier;
-        const commitMessage = updateRes.last_update?.identifier;
-        const commitAuthor = updateRes.last_update?.author;
-        const commitDate = updateRes.last_update?.date;
+        const commitHash = updateRes.data?.last_update?.identifier;
+        const commitMessage = updateRes.data?.last_update?.identifier;
+        const commitAuthor = updateRes.data?.last_update?.author;
+        const commitDate = updateRes.data?.last_update?.date;
 
         core.setOutput("duration", duration);
         core.setOutput("commitHash", commitHash);
