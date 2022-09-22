@@ -1,0 +1,28 @@
+{
+  "name": "cpanel-deploy-action",
+  "version": "1.0.0",
+  "description": "deploy to cPanel using cPanel API and git",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build index.js -o dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pinkasey/cpanel-deploy-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pinkasey/cpanel-deploy-action/issues"
+  },
+  "homepage": "https://github.com/pinkasey/cpanel-deploy-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.9.1",
+    "axios": "^0.27.2"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.34.0"
+  }
+}
