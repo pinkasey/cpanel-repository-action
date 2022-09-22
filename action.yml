@@ -21,6 +21,14 @@ inputs:
     description: "branch to checkout and update. e.g 'main'. Be careful when setting this parameter - it may change the checked-out branch in cPanel"
     required: true
 outputs:
+  commitHash:
+    description: 'Hash of last commit, after a successful update'
+  commitMessage:
+    description: 'Message of last commit, after a successful update'
+  commitAuthor:
+    description: 'Author of last commit, after a successful update'
+  commitDate:
+    description: 'Date of last commit (epoch time, in seconds), after a successful update'
   duration:
     description: 'Duration of deployment, in milliseconds'
 runs:

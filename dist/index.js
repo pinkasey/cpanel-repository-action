@@ -7806,7 +7806,6 @@ const main = async () => {
 
     const timeStart = new Date();
     try {
-        const maxWaitSeconds = 60 * 5;
         const hostname = core.getInput('hostname', {required: true});
         const port = core.getInput('cPanelApiPort', {required: true});
         const repository_root = core.getInput('repository_root', {required: true});
@@ -7832,9 +7831,18 @@ const main = async () => {
             // noinspection ExceptionCaughtLocallyJS
             throw new Error(updateRes.errors);
         }
-        
+
         const duration = new Date() - timeStart;
+        const commitHash = updateRes.last_update?.identifier;
+        const commitMessage = updateRes.last_update?.identifier;
+        const commitAuthor = updateRes.last_update?.author;
+        const commitDate = updateRes.last_update?.date;
+
         core.setOutput("duration", duration);
+        core.setOutput("commitHash", commitHash);
+        core.setOutput("commitMessage", commitMessage);
+        core.setOutput("commitAuthor", commitAuthor);
+        core.setOutput("commitDate", commitDate);
         core.info(`deployment duration: ${duration}`);
     } catch (error) {
         const duration = new Date() - timeStart;
