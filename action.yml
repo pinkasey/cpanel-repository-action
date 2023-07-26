@@ -20,6 +20,10 @@ inputs:
   branch:
     description: "branch to checkout and update. e.g 'main'. Be careful when setting this parameter - it may change the checked-out branch in cPanel"
     required: true
+  timeout:
+    description: "http timeout (in milliseconds) for the command sent to cPanel. Default is 5000 (5 seconds)"
+    required: false
+    default: "5000"
 outputs:
   commitHash:
     description: 'Hash of last commit, after a successful update'

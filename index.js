@@ -11,13 +11,14 @@ const main = async () => {
         const branch = core.getInput('branch', {required: true});
         const cpanel_token = core.getInput('cpanel_token', {required: true});
         const cpanel_username = core.getInput('cpanel_username', {required: true});
+        const timeout = parseInt( core.getInput('timeout', {required: true}) );
 
         const baseUrl = `${hostname}:${port}/execute`;
         core.info(`baseUrl: '${baseUrl}'`);
         const updateRepoEndpoint = baseUrl + "/VersionControl/update";
 
         let updateRes = await axios.get(updateRepoEndpoint, {
-            port: port,
+            timeout: timeout,
             params: {
                 repository_root,
                 branch,
